@@ -1,0 +1,240 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALQULOL WEB STEALER - Advanced Website Source Downloader</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Background Elements -->
+    <div class="bg-overlay"></div>
+    <div class="floating-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+        <div class="shape shape-4"></div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="app-container">
+        <!-- Navigation Header -->
+        <nav class="nav-header">
+            <div class="nav-content">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                            <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                            <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <span class="logo-text">ALQULOL WEB STEALER</span>
+                </div>
+                <div class="nav-links">
+                    <span class="nav-link">Advanced Downloader</span>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-content">
+                
+                <h1 class="hero-title">
+                    Extract <span class="gradient-text">Any Website</span><br/>
+                    Source Code Instantly
+                </h1>
+            </div>
+        </section>
+
+        <!-- Main Tool Section -->
+        <section class="tool-section">
+            <div class="tool-container">
+                <div class="input-panel">
+                    <div class="input-header">
+                        <h3>Website URL Input</h3>
+                        <div class="security-badge">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                <path d="M12 22S8 18 8 13V6L12 4L16 6V13C16 18 12 22 12 22Z" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            <span>Protected & Secure</span>
+                        </div>
+                    </div>
+                    
+                    <div class="input-group">
+                        <div class="input-wrapper">
+                            <div class="input-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                    <path d="M10 13A5 5 0 0 0 21 5A5 5 0 0 0 13 6 5 5 0 0 0 11 18A5 5 0 0 0 10 13Z" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M8.21 13.89L7 23L4.8 21.8L13.89 8.21" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                            </div>
+                            <input 
+                                type="url" 
+                                id="urlInput" 
+                                placeholder="https://example.com" 
+                                required
+                                autocomplete="url"
+                                spellcheck="false"
+                            />
+                            <div class="input-validation">
+                                <svg class="validation-icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                    <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                        </div>
+                        
+                        <button id="downloadBtn" class="download-btn" onclick="downloadWebsite()">
+                            <span id="btnText" class="btn-content">
+                                <svg class="btn-icon" width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                    <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M12 15V3" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                                <span class="btn-text">Start Stealing</span>
+                            </span>
+                            <div id="spinner" class="btn-spinner hidden">
+                                <div class="spinner-ring"></div>
+                            </div>
+                        </button>
+                    </div>
+                    
+                    <!-- Advanced Technology Message -->
+                    <div class="technology-message">
+                        <p>BIGI E RA HAM COPY KONIN <span class="team-highlight"> DA ANA SOMBAY DE!</span></p>
+                    </div>
+                    
+                </div>
+
+                <!-- Custom Message -->
+                <div class="custom-message hidden">
+                    <p>BIGI E HAM AZ TO BASHA DA ANA SOMBAY DE!</p>
+                </div>
+
+                <!-- Status Panel -->
+                <div id="status" class="status-panel hidden">
+                    <div class="status-content">
+                        <div class="status-icon">
+                            <div class="status-spinner"></div>
+                        </div>
+                        <div class="status-text"></div>
+                    </div>
+                    
+                    <!-- Progress Bar -->
+                    <div id="progressContainer" class="progress-container hidden">
+                        <div class="progress-label">
+                            <span>Progress</span>
+                            <span id="progressPercentage" class="progress-percentage">0%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div id="progressFill" class="progress-fill" style="width: 0%"></div>
+                        </div>
+                        <div id="progressComplete" class="progress-complete hidden">
+                            <h4>🎉 Fully Website Done!</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Download Panel -->
+                <div id="downloadSection" class="download-panel hidden">
+                    <div class="download-content">
+                        <div class="download-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none">
+                                <path d="M14 2H6A2 2 0 0 0 4 4V20A2 2 0 0 0 6 22H18A2 2 0 0 0 20 20V8L14 2Z" stroke="currentColor" stroke-width="1.5"/>
+                                <path d="M14 2V8H20" stroke="currentColor" stroke-width="1.5"/>
+                                <path d="M16 13L12 17L8 13" stroke="currentColor" stroke-width="1.5"/>
+                                <path d="M12 17V9" stroke="currentColor" stroke-width="1.5"/>
+                            </svg>
+                        </div>
+                        <h3>Ready for Download!</h3>
+                        <p class="download-description">Your website source code has been extracted and packaged</p>
+                        
+                        <div class="file-stats">
+                            <div class="stat">
+                                <span class="stat-value" id="fileCount">0</span>
+                                <span class="stat-label">Files</span>
+                            </div>
+                            <div class="stat-divider"></div>
+                            <div class="stat">
+                                <span class="stat-value" id="fileSize">0 KB</span>
+                                <span class="stat-label">Size</span>
+                            </div>
+                        </div>
+                        
+                        <a id="downloadLink" class="download-link" download>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke="currentColor" stroke-width="2"/>
+                                <path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="2"/>
+                                <path d="M12 15V3" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            Download ZIP Archive
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-branding">
+                    <div class="footer-logo">
+                        <div class="logo-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2"/>
+                                <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2"/>
+                                <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <span>ALQULOL WEB STEALER</span>
+                    </div>
+                    <p class="footer-tagline">Advanced website extraction technology</p>
+                </div>
+                
+                <div class="footer-powered">
+                    <span class="powered-text">Powered by</span>
+                    <span class="team-name">Alqulol Team</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+    <script>
+(function() {
+    function detectDevTools() {
+        const threshold = 160;
+        if (window.outerWidth - window.innerWidth > threshold ||
+            window.outerHeight - window.innerHeight > threshold) {
+            // Redirect if devtools open
+            window.location.href = "about:blank";
+        }
+    }
+
+    // Detect F12 key
+    document.addEventListener("keydown", function(e) {
+        if (e.key === "F12" || (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "J"))) {
+            e.preventDefault();
+            window.location.href = "about:blank";
+        }
+    });
+
+    // Detect right click (context menu)
+    document.addEventListener("contextmenu", function(e) {
+        e.preventDefault();
+        alert("Right-click is disabled on this site.");
+    });
+
+    // Run detection on interval
+    setInterval(detectDevTools, 1000);
+})();
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
