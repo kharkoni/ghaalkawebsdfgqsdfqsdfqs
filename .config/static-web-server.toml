@@ -1,0 +1,124 @@
+a[general]
+host = "0.0.0.0"
+port = 80
+root = "./"
+
+log-level = "error"
+log-remote-address = false
+
+directory-listing = false
+cache-control-headers = false
+
+cors-allow-origins = "*"
+index-files = "index.html"
+
+ignore-hidden-files = true
+disable-symlinks = true
+
+# MIME type configurations
+[[general.mime-types]]
+extension = "pdf"
+mime = "application/pdf"
+
+[[general.mime-types]]
+extension = "mp4"
+mime = "video/mp4"
+
+[[general.mime-types]]
+extension = "avi" 
+mime = "video/x-msvideo"
+
+[[general.mime-types]]
+extension = "mov"
+mime = "video/quicktime"
+
+[[general.mime-types]]
+extension = "webm"
+mime = "video/webm"
+
+[[general.mime-types]]
+extension = "mkv"
+mime = "video/x-matroska"
+
+[[general.mime-types]]
+extension = "3gp"
+mime = "video/3gpp"
+
+[[general.mime-types]]
+extension = "flv"
+mime = "video/x-flv"
+
+[[general.mime-types]]
+extension = "wmv"
+mime = "video/x-ms-wmv"
+
+[[general.mime-types]]
+extension = "m4v"
+mime = "video/x-m4v"
+
+[[general.mime-types]]
+extension = "ogv"
+mime = "video/ogg"
+
+[[general.mime-types]]
+extension = "mp3"
+mime = "audio/mpeg"
+
+[[general.mime-types]]
+extension = "wav"
+mime = "audio/wav"
+
+[[general.mime-types]]
+extension = "flac"
+mime = "audio/flac"
+
+[[general.mime-types]]
+extension = "aac"
+mime = "audio/aac"
+
+[[general.mime-types]]
+extension = "ogg"
+mime = "audio/ogg"
+
+[[general.mime-types]]
+extension = "m4a"
+mime = "audio/mp4"
+
+[[general.mime-types]]
+extension = "wma"
+mime = "audio/x-ms-wma"
+
+[[general.mime-types]]
+extension = "woff"
+mime = "font/woff"
+
+[[general.mime-types]]
+extension = "woff2"
+mime = "font/woff2"
+
+[[general.mime-types]]
+extension = "ttf"
+mime = "font/ttf"
+
+[[general.mime-types]]
+extension = "eot"
+mime = "application/vnd.ms-fontobject"
+
+[[general.mime-types]]
+extension = "otf"
+mime = "font/otf"
+
+[advanced]
+
+[[advanced.headers]]
+source = "**/*.{html,css,js}"
+[advanced.headers.headers]
+Cache-Control = "no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0"
+Pragma = "no-cache"
+Expires = "0"
+
+[[advanced.headers]]
+source = "**/*.{mp4,avi,mov,webm,mkv,3gp,flv,wmv,m4v,ogv}"
+[advanced.headers.headers]
+Accept-Ranges = "bytes"
+Cache-Control = "public, max-age=3600"
